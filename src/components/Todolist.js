@@ -9,7 +9,6 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import Tooltip from '@material-ui/core/Tooltip';
 import TextField from '@material-ui/core/TextField';
 import DeleteIcon from '@material-ui/icons/Delete';
-import DatePicker from 'react-datepicker';
 
 
 
@@ -17,7 +16,6 @@ import DatePicker from 'react-datepicker';
 function Todolist() {
     const [todo, setTodo] = useState({desc: '', date: ''});
     const [todos, setTodos] = useState([]);
-    const [pickDate, setPickDate] = useState();
 
     const addTodo = () => {
         setTodos([{desc: todo.desc, date: todo.date}, ...todos]);
