@@ -9,6 +9,7 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import Tooltip from '@material-ui/core/Tooltip';
 import TextField from '@material-ui/core/TextField';
 import DeleteIcon from '@material-ui/icons/Delete';
+import DatePicker from 'react-datepicker';
 
 
 
@@ -16,6 +17,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 function Todolist() {
     const [todo, setTodo] = useState({desc: '', date: ''});
     const [todos, setTodos] = useState([]);
+    const [pickDate, setPickDate] = useState();
 
     const addTodo = () => {
         setTodos([{desc: todo.desc, date: todo.date}, ...todos]);
@@ -43,7 +45,7 @@ function Todolist() {
     return (
         <div>
        <TextField style={{marginRight: 10}} label="Description" name="desc" value={todo.desc} onChange={inputChanged}/>
-       <input type="date" name="date" value={todo.date} onChange={inputChanged} />
+       <TextField label="Date" name="date" InputLabelProps={{shrink: true,}} type="date" value={todo.date} onChange={inputChanged} />
        <Tooltip title="Add todo">
         <IconButton color="primary" startIcon={<AddIcon />} onClick={addTodo}><AddCircleIcon fontSize="large"/></IconButton>
         </Tooltip>
